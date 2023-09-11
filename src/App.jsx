@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Categories from './Categories';
 import Menu from './Menu';
 import Title from './Title';
 import menu from './data';
@@ -18,19 +19,13 @@ const App = () => {
   };
 
   return (
-    <>
-      <Title />
-      <div className="btn-container">
-        {ourCategories.map((category, key) => {
-          return (
-            <button key={key} onClick={() => filterMenu(category)}>
-              {category}
-            </button>
-          );
-        })}
-      </div>
-      <Menu ourMenu={ourMenu} />
-    </>
+    <main>
+      <section className="menu">
+        <Title />
+        <Categories ourCategories={ourCategories} filterMenu={filterMenu} />
+        <Menu ourMenu={ourMenu} />
+      </section>
+    </main>
   );
 };
 export default App;

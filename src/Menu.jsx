@@ -3,7 +3,7 @@ import MenuItem from './MenuItem';
 
 const Menu = ({ ourMenu }) => {
   return (
-    <div>
+    <div className="section-center">
       {ourMenu.map((eachMenu) => {
         return <MenuItem key={eachMenu.id} {...eachMenu} />;
       })}
